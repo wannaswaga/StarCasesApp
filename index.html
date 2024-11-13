@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Казино Stars</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>Добро пожаловать в Казино Stars!</h1>
+    <p>Выберите кейс и откройте его, чтобы получить ценный приз!</p>
+
+    <!-- Список кейсов с разной стоимостью -->
+    <div class="case-container">
+      <button onclick="openCase(100)">Кейс за 100 ⭐️</button>
+      <button onclick="openCase(500)">Кейс за 500 ⭐️</button>
+      <button onclick="openCase(1000)">Кейс за 1000 ⭐️</button>
+      <button onclick="openCase(10000)">Кейс за 10000 ⭐️</button>
+    </div>
+
+    <!-- Колесо фортуны с секциями для призов -->
+    <div id="wheel">
+      <div id="wheel-inner">
+        <div class="sector">150 ⭐️</div>
+        <div class="sector">50 ⭐️</div>
+        <div class="sector">25 ⭐️</div>
+        <div class="sector">0.5 Ton</div>
+        <div class="sector">Премиум на 3 месяца</div>
+        <div class="sector">Попробуйте еще раз</div>
+      </div>
+    </div>
+
+    <button id="add-stars" onclick="addStars()">Пополнить баланс</button>
+    <button id="withdraw-stars" onclick="withdrawStars()">Вывести Stars</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
