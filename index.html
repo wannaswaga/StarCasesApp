@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Казино Stars</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Подключаем шрифт Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Верхняя панель с логотипом, балансом и настройками -->
   <header class="top-bar">
-    <div class="logo" onclick="goToHomePage()">🌟</div> <!-- Логотип, замените на свой -->
+    <div class="logo" onclick="goToHomePage()">🌟</div>
     <div class="balance-settings">
-      <span class="balance">
+      <div class="balance">
         <span id="balanceAmount">500</span> ⭐
-      </span>
+      </div>
       <div class="settings" onclick="openSettings()">⚙️</div>
     </div>
   </header>
@@ -44,6 +43,17 @@
         <p>F1</p>
         <span class="price">5000 ⭐</span>
       </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно для настроек (пополнение, вывод, история) -->
+  <div id="settings-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Настройки</h2>
+      <button class="modal-button" onclick="openDeposit()">Пополнить баланс</button>
+      <button class="modal-button" onclick="openWithdraw()">Вывести средства</button>
+      <button class="modal-button" onclick="openHistory()">История транзакций</button>
+      <button class="modal-button close-button" onclick="closeSettings()">Закрыть</button>
     </div>
   </div>
 

@@ -4,17 +4,12 @@ function openCase(price) {
   let currentBalance = parseInt(balanceElement.innerText);
 
   if (currentBalance >= price) {
-    // Логика открытия кейса
     currentBalance -= price;
     balanceElement.innerText = currentBalance;
-
-    // Эффект открытия кейса
     alert(`Вы открыли кейс за ${price} ⭐!`);
-
-    // Обновление и отображение результата
     setTimeout(() => {
       alert("Ваш приз: 150 ⭐");
-      currentBalance += 150; // Пример награды
+      currentBalance += 150;
       balanceElement.innerText = currentBalance;
     }, 1000);
   } else {
@@ -22,14 +17,25 @@ function openCase(price) {
   }
 }
 
-// Функция для открытия страницы с настройками
+// Функции для модального окна настроек
 function openSettings() {
-  alert("Здесь будет страница с пополнением, выводом и историей.");
+  document.getElementById("settings-modal").classList.remove("hidden");
 }
 
-// Функция для перехода на главную страницу (логотип)
-function goToHomePage() {
-  location.reload();
+function closeSettings() {
+  document.getElementById("settings-modal").classList.add("hidden");
+}
+
+function openDeposit() {
+  alert("Здесь будет страница для пополнения.");
+}
+
+function openWithdraw() {
+  alert("Здесь будет страница для вывода.");
+}
+
+function openHistory() {
+  alert("Здесь будет страница с историей транзакций.");
 }
 
 // Инициализация Telegram Web App
