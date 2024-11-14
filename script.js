@@ -1,40 +1,36 @@
-const prizes = {
-  100: ["150 ⭐️", "50 ⭐️", "25 ⭐️", "Попробуйте еще раз"],
-  500: ["700 ⭐️", "300 ⭐️", "100 ⭐️", "0.5 Ton"],
-  1000: ["1500 ⭐️", "500 ⭐️", "250 ⭐️", "Premium на 3 месяца"],
-  10000: ["15000 ⭐️", "5000 ⭐️", "2500 ⭐️", "1 Ton"]
-};
+// Функция для открытия кейса и обновления баланса
+function openCase(price) {
+  const balanceElement = document.getElementById("balanceAmount");
+  let currentBalance = parseInt(balanceElement.innerText);
 
-const wheelInner = document.getElementById("wheel-inner");
+  if (currentBalance >= price) {
+    // Логика открытия кейса
+    currentBalance -= price;
+    balanceElement.innerText = currentBalance;
 
-function getRandomPrize(caseCost) {
-  const casePrizes = prizes[caseCost];
-  const randomIndex = Math.floor(Math.random() * casePrizes.length);
-  return { prize: casePrizes[randomIndex], index: randomIndex };
+    // Эффект открытия кейса
+    alert(`Вы открыли кейс за ${price} ⭐!`);
+
+    // Обновление и отображение результата
+    setTimeout(() => {
+      alert("Ваш приз: 150 ⭐");
+      currentBalance += 150; // Пример награды
+      balanceElement.innerText = currentBalance;
+    }, 1000);
+  } else {
+    alert("Недостаточно звезд для открытия этого кейса.");
+  }
 }
 
-function spinWheel(prizeIndex) {
-  const randomSpin = Math.floor(Math.random() * 5 + 5);
-  const angle = 360 / prizes[100].length * prizeIndex;
-  const totalRotation = 360 * randomSpin - angle;
-
-  wheelInner.style.transform = `rotate(${totalRotation}deg)`;
+// Функция для открытия страницы с настройками
+function openSettings() {
+  alert("Здесь будет страница с пополнением, выводом и историей.");
 }
 
-function openCase(caseCost) {
-  const { prize, index } = getRandomPrize(caseCost);
-
-  spinWheel(index);
-
-  setTimeout(() => {
-    alert(`Ваш приз: ${prize}`);
-  }, 3000);
+// Функция для перехода на главную страницу (логотип)
+function goToHomePage() {
+  location.reload();
 }
 
-function addStars() {
-  Telegram.WebApp.sendData("User requested to add Stars");
-}
-
-function withdrawStars() {
-  Telegram.WebApp.sendData("User requested to withdraw Stars");
-}
+// Инициализация Telegram Web App
+Telegram.WebApp.ready();

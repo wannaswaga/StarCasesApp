@@ -7,32 +7,40 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
-    <h1>Добро пожаловать в Казино Stars!</h1>
-    <p>Выберите кейс и откройте его, чтобы получить ценный приз!</p>
-
-    <!-- Список кейсов с разной стоимостью -->
-    <div class="case-container">
-      <button onclick="openCase(100)">Кейс за 100 ⭐️</button>
-      <button onclick="openCase(500)">Кейс за 500 ⭐️</button>
-      <button onclick="openCase(1000)">Кейс за 1000 ⭐️</button>
-      <button onclick="openCase(10000)">Кейс за 10000 ⭐️</button>
+  <!-- Верхняя панель с логотипом, балансом и настройками -->
+  <header class="top-bar">
+    <div class="logo" onclick="goToHomePage()">🌟</div> <!-- Логотип, замените на свой -->
+    <div class="balance">
+      <span id="balanceAmount">500</span> ⭐
     </div>
+    <div class="settings" onclick="openSettings()">⚙️</div>
+  </header>
 
-    <!-- Колесо фортуны с секциями для призов -->
-    <div id="wheel">
-      <div id="wheel-inner">
-        <div class="sector">150 ⭐️</div>
-        <div class="sector">50 ⭐️</div>
-        <div class="sector">25 ⭐️</div>
-        <div class="sector">0.5 Ton</div>
-        <div class="sector">Премиум на 3 месяца</div>
-        <div class="sector">Попробуйте еще раз</div>
+  <!-- Список кейсов -->
+  <div id="app">
+    <h2>Кейсы</h2>
+    <div class="case-list">
+      <div class="case-card" onclick="openCase(100)">
+        <img src="images/case1.png" alt="Cool Bus">
+        <p>Cool Bus</p>
+        <span class="price">100 ⭐</span>
+      </div>
+      <div class="case-card" onclick="openCase(500)">
+        <img src="images/case2.png" alt="AE86">
+        <p>AE86</p>
+        <span class="price">500 ⭐</span>
+      </div>
+      <div class="case-card" onclick="openCase(1000)">
+        <img src="images/case3.png" alt="Fast and Furious 39">
+        <p>Fast and Furious 39</p>
+        <span class="price">1000 ⭐</span>
+      </div>
+      <div class="case-card" onclick="openCase(5000)">
+        <img src="images/case4.png" alt="F1">
+        <p>F1</p>
+        <span class="price">5000 ⭐</span>
       </div>
     </div>
-
-    <button id="add-stars" onclick="addStars()">Пополнить баланс</button>
-    <button id="withdraw-stars" onclick="withdrawStars()">Вывести Stars</button>
   </div>
 
   <script src="script.js"></script>
