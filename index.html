@@ -5,15 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Казино Stars</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Подключаем шрифт Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Верхняя панель с логотипом, балансом и настройками -->
   <header class="top-bar">
     <div class="logo" onclick="goToHomePage()">🌟</div> <!-- Логотип, замените на свой -->
-    <div class="balance">
-      <span id="balanceAmount">500</span> ⭐
+    <div class="balance-settings">
+      <span class="balance">
+        <span id="balanceAmount">500</span> ⭐
+      </span>
+      <div class="settings" onclick="openSettings()">⚙️</div>
     </div>
-    <div class="settings" onclick="openSettings()">⚙️</div>
   </header>
 
   <!-- Список кейсов -->
