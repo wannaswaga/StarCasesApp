@@ -23,22 +23,22 @@
   <div id="app">
     <h2>Кейсы</h2>
     <div class="case-list">
-      <div class="case-card" onclick="openCase(100)">
+      <div class="case-card" onclick="openCaseDetails('Cool Bus', 100, 'images/case1.png')">
         <img src="images/case1.png" alt="Cool Bus">
         <p>Cool Bus</p>
         <span class="price">100 ⭐</span>
       </div>
-      <div class="case-card" onclick="openCase(500)">
+      <div class="case-card" onclick="openCaseDetails('AE86', 500, 'images/case2.png')">
         <img src="images/case2.png" alt="AE86">
         <p>AE86</p>
         <span class="price">500 ⭐</span>
       </div>
-      <div class="case-card" onclick="openCase(1000)">
+      <div class="case-card" onclick="openCaseDetails('Fast and Furious 39', 1000, 'images/case3.png')">
         <img src="images/case3.png" alt="Fast and Furious 39">
         <p>Fast and Furious 39</p>
         <span class="price">1000 ⭐</span>
       </div>
-      <div class="case-card" onclick="openCase(5000)">
+      <div class="case-card" onclick="openCaseDetails('F1', 5000, 'images/case4.png')">
         <img src="images/case4.png" alt="F1">
         <p>F1</p>
         <span class="price">5000 ⭐</span>
@@ -46,14 +46,14 @@
     </div>
   </div>
 
-  <!-- Модальное окно для настроек (пополнение, вывод, история) -->
-  <div id="settings-modal" class="modal hidden">
+  <!-- Модальное окно для кейсов -->
+  <div id="case-modal" class="modal hidden">
     <div class="modal-content">
-      <h2>Настройки</h2>
-      <button class="modal-button" onclick="openDeposit()">Пополнить баланс</button>
-      <button class="modal-button" onclick="openWithdraw()">Вывести средства</button>
-      <button class="modal-button" onclick="openHistory()">История транзакций</button>
-      <button class="modal-button close-button" onclick="closeSettings()">Закрыть</button>
+      <h2 id="case-title">Название Кейса</h2>
+      <img id="case-image" src="" alt="Кейс">
+      <p>Цена: <span id="case-price"></span> ⭐</p>
+      <button class="modal-button" onclick="openCase()">Открыть кейс</button>
+      <button class="modal-button close-button" onclick="closeCaseModal()">Закрыть</button>
     </div>
   </div>
 
