@@ -57,6 +57,18 @@
     </div>
   </div>
 
+  <!-- Модальное окно для настроек -->
+  <div id="settings-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Настройки</h2>
+      <button class="modal-button" onclick="openDeposit()">Пополнить баланс</button>
+      <button class="modal-button" onclick="openWithdraw()">Вывести средства</button>
+      <button class="modal-button" onclick="openHistory()">История транзакций</button>
+      <button class="modal-button close-button" onclick="closeSettings()">Закрыть</button>
+    </div>
+  </div>
+
+  <!-- Подключение скрипта -->
   <script src="script.js"></script>
 </body>
 </html>

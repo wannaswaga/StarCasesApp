@@ -83,65 +83,44 @@ h2 {
   border-radius: 8px;
 }
 
-.price {
-  background-color: #ffcc00;
-  color: #1e1e2f;
-  padding: 4px 8px;
-  border-radius: 8px;
-  font-weight: bold;
-  margin-top: 8px;
-  display: inline-block;
-  font-size: 0.9em;
+// Открытие модального окна с деталями кейса
+function openCaseDetails(title, price, image) {
+  document.getElementById("case-title").innerText = title;
+  document.getElementById("case-price").innerText = price;
+  document.getElementById("case-image").src = image;
+  document.getElementById("case-modal").classList.remove("hidden");
 }
 
-/* Модальное окно для кейсов */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// Функция для открытия кейса
+function openCase() {
+  alert("Вы открыли кейс!");
 }
 
-.modal.hidden {
-  display: none;
+// Закрытие модального окна
+function closeCaseModal() {
+  document.getElementById("case-modal").classList.add("hidden");
 }
 
-.modal-content {
-  background-color: #1e3a5f;
-  padding: 20px;
-  border-radius: 12px;
-  width: 300px;
-  text-align: center;
+// Функции для модального окна настроек
+function openSettings() {
+  document.getElementById("settings-modal").classList.remove("hidden");
 }
 
-.modal h2 {
-  color: #ffd700;
-  margin-bottom: 20px;
+function closeSettings() {
+  document.getElementById("settings-modal").classList.add("hidden");
 }
 
-.modal-button {
-  background-color: #ffcc00;
-  color: #1e1e2f;
-  padding: 10px 20px;
-  margin: 10px 0;
-  font-weight: bold;
-  border-radius: 8px;
-  width: 100%;
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.3s;
+function openDeposit() {
+  alert("Здесь будет страница для пополнения.");
 }
 
-.modal-button:hover {
-  background-color: #ffd700;
+function openWithdraw() {
+  alert("Здесь будет страница для вывода.");
 }
 
-.close-button {
-  background-color: #2a3a4f;
-  color: #ffcc00;
+function openHistory() {
+  alert("Здесь будет страница с историей транзакций.");
 }
+
+// Инициализация Telegram Web App
+Telegram.WebApp.ready();
