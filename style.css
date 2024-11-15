@@ -157,6 +157,7 @@ h2 {
   margin: 20px auto;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  border: 5px solid #ffd700;
 }
 
 #wheel-inner {
@@ -168,15 +169,19 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: spin 3s ease-out;
 }
 
 .segment {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   position: absolute;
   background-color: #ffcc00;
   color: #1e1e2f;
   font-weight: bold;
   font-size: 0.9em;
-  border: 2px solid #fff;
- 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
