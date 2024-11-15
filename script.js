@@ -24,3 +24,15 @@ function openSettings() {
 function closeSettings() {
   document.getElementById("settings-modal").classList.add("hidden");
 }
+
+function openDeposit() {
+  alert("Здесь будет страница для пополнения.");
+}
+
+function openWithdraw() {
+  alert("Здесь будет страница для вывода.");
+}
+
+function openHistory() {
+  alert("Здесь будет страница с историей транзакций.");
+}
