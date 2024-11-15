@@ -46,12 +46,20 @@
     </div>
   </div>
 
-  <!-- Модальное окно для кейсов -->
+  <!-- Модальное окно для деталей кейса -->
   <div id="case-modal" class="modal hidden">
     <div class="modal-content">
       <h2 id="case-title">Название Кейса</h2>
       <img id="case-image" src="" alt="Кейс">
       <p>Цена: <span id="case-price"></span> ⭐</p>
+      <div id="fortune-wheel">
+        <div id="wheel-inner">
+          <div class="segment">150 ⭐️</div>
+          <div class="segment">50 ⭐️</div>
+          <div class="segment">25 ⭐️</div>
+          <div class="segment">Попробуйте еще раз</div>
+        </div>
+      </div>
       <button class="modal-button" onclick="openCase()">Открыть кейс</button>
       <button class="modal-button close-button" onclick="closeCaseModal()">Закрыть</button>
     </div>
@@ -61,12 +69,15 @@
   <div id="settings-modal" class="modal hidden">
     <div class="modal-content">
       <h2>Настройки</h2>
-      <button class="modal-button" onclick="openDeposit()">Пополнить баланс</button>
-      <button class="modal-button" onclick="openWithdraw()">Вывести средства</button>
+      <button class="modal-button" onclick="addStars()">Пополнить баланс</button>
+      <button class="modal-button" onclick="withdrawStars()">Вывести средства</button>
       <button class="modal-button" onclick="openHistory()">История транзакций</button>
       <button class="modal-button close-button" onclick="closeSettings()">Закрыть</button>
     </div>
   </div>
+
+  <!-- Отображение результата -->
+  <div id="result" class="result-display"></div>
 
   <script src="script.js"></script>
 </body>
